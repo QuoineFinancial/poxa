@@ -26,11 +26,18 @@ defmodule Poxa.BatchHandler do
     {:ok, body, req} = :cowboy_req.body(req)
     case JSX.decode(body) do
       {:ok, data} ->
-        case PusherEvent.build(data) do
-          {:ok, event} -> {false, req, %{body: body, event: event}}
-          _ ->
-            req = :cowboy_req.set_resp_body(@invalid_event_json, req)
-            {true, req, state}
+        events = Enum.map(data["batch"], fn(data_event) ->
+          case PusherEvent.build(data_event) do
+            {:ok, event} -> event
+            _ -> nil
+          end
+        end)
+
+        if Enum.any?(events, fn(event) -> event == nil end) do
+          req = :cowboy_req.set_resp_body(@invalid_event_json, req)
+          {true, req, state}
+        else
+          {false, req, %{body: body, batch: events}}
         end
       _ ->
         req = :cowboy_req.set_resp_body(@invalid_event_json, req)
