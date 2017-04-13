@@ -23,7 +23,7 @@
   "neotoma": {:hex, :neotoma, "1.7.3", "d8bd5404b73273989946e4f4f6d529e5c2088f5fa1ca790b4dbe81f4be408e61", [:rebar], []},
   "poison": {:hex, :poison, "2.2.0", "4763b69a8a77bd77d26f477d196428b741261a761257ff1cf92753a0d4d24a63", [:mix], []},
   "providers": {:hex, :providers, "1.6.0", "db0e2f9043ae60c0155205fcd238d68516331d0e5146155e33d1e79dc452964a", [:rebar3], [{:getopt, "0.8.2", [hex: :getopt, optional: false]}]},
-  "pusher": {:hex, :pusher, "0.1.3", "d3ed4c9c4f1dcb44791c24d5a964e41f9ae222fa9164a1d6fffdf62eb9685253", [:mix], [{:signaturex, "~> 1.0", [hex: :signaturex, optional: false]}, {:httpoison, "~> 0.8", [hex: :httpoison, optional: false]}, {:exjsx, "~> 3.0", [hex: :exjsx, optional: false]}]},
+  "pusher": {:hex, :pusher, "0.1.3", "d3ed4c9c4f1dcb44791c24d5a964e41f9ae222fa9164a1d6fffdf62eb9685253", [:mix], [{:exjsx, "~> 3.0", [hex: :exjsx, optional: false]}, {:httpoison, "~> 0.8", [hex: :httpoison, optional: false]}, {:signaturex, "~> 1.0", [hex: :signaturex, optional: false]}]},
   "pusher_client": {:git, "https://github.com/edgurgel/pusher_client.git", "2edb22a7b45b2fe962b12d6ee5460f7d722aadd7", []},
   "ranch": {:hex, :ranch, "1.2.0", "b286a948a0706a700a9f577e5cecbb2dc66097ea79f3ddb20ba5536069bdb7aa", [:make], []},
   "relx": {:hex, :relx, "3.20.0", "b515b8317d25b3a1508699294c3d1fa6dc0527851dffc87446661bce21a36710", [:rebar3], [{:bbmustache, "1.0.4", [hex: :bbmustache, optional: false]}, {:cf, "0.2.1", [hex: :cf, optional: false]}, {:erlware_commons, "0.21.0", [hex: :erlware_commons, optional: false]}, {:getopt, "0.8.2", [hex: :getopt, optional: false]}, {:providers, "1.6.0", [hex: :providers, optional: false]}]},
