@@ -68,8 +68,8 @@ defmodule Poxa.BatchHandler do
   @doc """
   The event data can't be greater than 10KB
   """
-  def valid_entity_length(req, %{event: event} = state) do
-    valid = byte_size(event.data) <= 10_000
+  def valid_entity_length(req, %{batch: events} = state) do
+    valid = Enum.all?(events, fn(event) -> byte_size(event.data) <= 10_000 end)
     req = if valid do
             req
           else
